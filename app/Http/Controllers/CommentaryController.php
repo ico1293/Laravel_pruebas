@@ -44,9 +44,13 @@ class CommentaryController extends Controller
      * @param  \App\Commentary  $commentary
      * @return \Illuminate\Http\Response
      */
-    public function show(Commentary $commentary)
+    public function show()
     {
-        //
+        $commentary = commentary::all(); 
+        
+        return view('welcome', [
+                'commentaries' => $commentary,
+            ]);
     }
 
     /**
