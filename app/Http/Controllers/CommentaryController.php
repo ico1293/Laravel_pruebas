@@ -14,7 +14,11 @@ class CommentaryController extends Controller
      */
     public function index()
     {
-        //
+        $commentary = commentary::paginate(10); 
+        
+        return view('table', [
+                'commentaries' => $commentary,
+            ]);
     }
 
     /**
@@ -46,11 +50,7 @@ class CommentaryController extends Controller
      */
     public function show()
     {
-        $commentary = commentary::all(); 
         
-        return view('welcome', [
-                'commentaries' => $commentary,
-            ]);
     }
 
     /**

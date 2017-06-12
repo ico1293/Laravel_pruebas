@@ -11,4 +11,6 @@
 |
 */
 
-Route::get('/', 'CommentaryController@show');
+Route::get('/', function (){return view('welcome');});
+
+Route::get('/table', 'CommentaryController@index');
